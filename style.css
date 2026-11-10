@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f5f9;
+    color: #222;
+    transition: background 0.3s, color 0.3s;
+}
+
+.main_container {
+    display: flex;
+    justify-content: center;
+    padding: 80px 20px 30px;
+}
+
+#soundboard_div {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.div_container_main {
+    width: 220px;
+    padding: 12px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s,
+                background 0.3s, color 0.3s;
+}
+
+.div_container_main:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.div_container_main img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.div_container_main p {
+    margin: 12px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.div_container_main button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #635bff;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.div_container_main button:hover {
+    background: #4840d4;
+}
+
+#toggle_theme {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 25px;
+    background: #262638;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#toggle_theme:hover {
+    transform: scale(1.05);
+}
+
+
+/* Controles de áudio */
+.audio_controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+    text-align: left;
+}
+
+.audio_controls label {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.audio_controls input[type="range"] {
+    width: 100%;
+    cursor: pointer;
+    accent-color: #635bff;
+}
+
+/* Botão Play */
+.div_container_main .play_button {
+    background: #635bff;
+    margin-bottom: 8px;
+}
+
+/* Botão Pause */
+.div_container_main .pause_button {
+    background: #e74c3c;
+}
+
+.div_container_main .pause_button:hover {
+    background: #c0392b;
+}
+
+/* Modo escuro */
+body.dark-mode .div_container_main .play_button {
+    background: #8278ff;
+}
+
+body.dark-mode .div_container_main .pause_button {
+    background: #d94c4c;
+}
+
+body.dark-mode .audio_controls input[type="range"] {
+    accent-color: #a69eff;
+}
+
+body.dark-mode {
+    background: #181824;
+    color: #f1f1f1;
+}
+
+body.dark-mode .div_container_main {
+    background: #262638;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .div_container_main button {
+    background: #8278ff;
+}
+
+body.dark-mode .div_container_main button:hover {
+    background: #6b60e8;
+}
+
+body.dark-mode #toggle_theme {
+    background: #f1f1f1;
+    color: #262638;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 500px) {
+    #soundboard_div {
+        gap: 15px;
+    }
+
+    .div_container_main {
+        width: 100%;
+        max-width: 280px;
+    }
+}
